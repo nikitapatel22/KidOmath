@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.templatevilla.mathslearnpoint">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:name="androidx.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_id"/>
+        <receiver android:name="com.templatevilla.mathslearnpoint.receiver.AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.templatevilla.mathslearnpoint.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.MainActivity"
+            android:theme="@style/FullScreenWindow">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.WorkSheetActivity"
+            android:theme="@style/FullScreenWindow" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.ActivityDailyTest"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.DailyQuizActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.SetActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.LevelActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.QuizActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.FractionActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.MixedLevelActivity"
+            android:theme="@style/FullScreenWindow" />
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.MixedQuizActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.MixedScoreActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.ScoreActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.ReviewAnswerActivity"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.ActivityRemider"
+            android:theme="@style/FullScreenWindow" />
+
+        <activity
+            android:name="com.templatevilla.mathslearnpoint.ui.AllPdfActivity"
+            android:theme="@style/FullScreenWindow" />
+    </application>
+
+</manifest>
